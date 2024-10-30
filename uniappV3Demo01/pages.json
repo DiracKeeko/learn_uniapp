@@ -12,6 +12,13 @@
 			{
 				"navigationBarTitleText" : "demo1"
 			}
+		},
+		{
+			"path" : "pages/learnDemo01/learnDemo01",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	"globalStyle": {
