@@ -18,6 +18,7 @@
       <swiper-item>444</swiper-item>
     </swiper>
 
+	<br>
     <!-- vertical 纵向轮播，默认为false -->
     <swiper
       indicator-dots="true"
@@ -28,7 +29,14 @@
       <swiper-item>333</swiper-item>
       <swiper-item>444</swiper-item>
     </swiper>
-
+  </view>
+  
+  <view>
+	  <!-- image 的 mode属性(决定图片的缩放模式) 默认scaleToFill, aspectFit, aspectFill, widthFix, heightFix -->
+	  <image src="/static/logo.png" mode="scaleToFill" class="pic"></image>
+	  <image src="/static/pic1.png" mode="aspectFit" class="pic"></image>
+	  <image src="/static/pic3.webp" mode="aspectFill" class="pic"></image>
+	  <image src="/static/pic4.jpg" mode="widthFix" class="pic"></image>
   </view>
 </template>
 
@@ -48,5 +56,10 @@ swiper {
   swiper-item:nth-child(2n) {
     background-color: orange;
   }
+}
+.pic {
+	width: 150px;
+	height: 150px;
+	margin: 10px;
 }
 </style>
