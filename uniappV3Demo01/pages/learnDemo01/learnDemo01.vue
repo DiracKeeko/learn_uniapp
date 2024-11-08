@@ -1,4 +1,8 @@
 <template>
+	<view>
+		<navigator url="/pages/learnDemo02/learnDemo02">跳转learnDemo02</navigator>
+	</view>
+	<br>
 	<view class="box" hover-class="box-hover" hover-start-time="10" hover-stay-time="50">
 		view布局标签
 		<view class="inner" hover-class="inner-hover" hover-stop-propagation>内部元素</view>
