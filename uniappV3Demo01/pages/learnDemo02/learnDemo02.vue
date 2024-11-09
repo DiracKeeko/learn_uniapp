@@ -1,11 +1,13 @@
 <template>
-	<view>
-		<!-- open-type reLaunch: 不在左上角自动添加返回箭头 -->
-		<navigator url="/pages/learnDemo01/learnDemo01" open-type="reLaunch">跳转learnDemo01</navigator>
-		<!-- target 跳转到哪里？ 默认值self, 可选值self / 其他小程序 -->
-	</view>
-	<br>
-	
+  <view>
+    <!-- open-type reLaunch: 不在左上角自动添加返回箭头 -->
+    <navigator url="/pages/learnDemo01/learnDemo01" open-type="reLaunch"
+      >跳转learnDemo01</navigator
+    >
+    <!-- target 跳转到哪里？ 默认值self, 可选值self / 其他小程序 -->
+  </view>
+  <br />
+
   <view>
     <!-- swiper 轮播器 -->
     <!-- 指示点 indicator-dots, indicator-color + indicator-active-color -->
