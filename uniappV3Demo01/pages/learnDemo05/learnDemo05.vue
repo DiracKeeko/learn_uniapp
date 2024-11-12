@@ -8,6 +8,10 @@
   <view class="box" :class="isActive ? 'active' : ''"></view>
   <br />
   <button @click="toggleActive">切换激活状态</button>
+
+  <br />
+  <view class="box" :style="{ backgroundColor: bgColor }">box3</view>
+  <button @click="changeBgColor">随机生成box3背景色</button>
 </template>
 
 <script setup>
@@ -31,6 +35,13 @@ setInterval(() => {
 const isActive = ref(true);
 function toggleActive() {
   isActive.value = !isActive.value;
+}
+
+const bgColor = ref("#bbffaa");
+function changeBgColor() {
+  const numberStr = Math.random().toFixed(6).slice(2);
+  const colorStr = `#${numberStr}`;
+  bgColor.value = colorStr;
 }
 </script>
 
