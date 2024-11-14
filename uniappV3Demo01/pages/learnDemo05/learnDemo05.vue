@@ -12,6 +12,10 @@
   <br />
   <view class="box" :style="{ backgroundColor: bgColor }">box3</view>
   <button @click="changeBgColor">随机生成box3背景色</button>
+
+	<br />
+	<switch @change="switchChange" />
+	<button type="primary" :loading="btnLoading">一个按钮</button>
 </template>
 
 <script setup>
@@ -42,6 +46,13 @@ function changeBgColor() {
   const numberStr = Math.random().toFixed(6).slice(2);
   const colorStr = `#${numberStr}`;
   bgColor.value = colorStr;
+}
+
+const btnLoading = ref(false);
+function switchChange(e) {
+	console.log("e->", e);
+	console.log(e.detail.value);
+	btnLoading.value = e.detail.value;
 }
 </script>
 
