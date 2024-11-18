@@ -1,27 +1,29 @@
 <template>
   <view class="out">
+    <!-- confirm事件在 pc端按下enter, 移动端按下小键盘确定 的时机 触发 -->
     <input
       type="text"
       @focus="isActive = true"
       @blur="isActive = false"
       :value="inputValue"
-			@input="e => inputValue = e.detail.value"
+      @input="(e) => (inputValue = e.detail.value)"
+      @confirm="handleConfirm"
     />
-		
-		<!-- 上面的 :value + @input 等价于下面的v-model -->
-		<!-- <input
+
+    <!-- 上面的 :value + @input 等价于下面的v-model -->
+    <!-- <input
 		  type="text"
 		  @focus="isActive = true"
 		  @blur="isActive = false"
 		  v-model="inputValue"
 		/> -->
-		
+
     <image
       src="../../static/chicken.gif"
       class="pic"
       :class="isActive ? 'active' : ''"
     />
-		预览：{{ inputValue }}
+    预览：{{ inputValue }}
   </view>
 </template>
 
@@ -37,6 +39,9 @@ const isActive = ref(false);
 // 	inputValue.value = e.detail.value; // 注意这里是 e.detail.value 不是 e.target.value
 // }
 
+function handleConfirm(e) {
+  console.log(e);
+}
 </script>
 
 <style lang="scss" scoped>
