@@ -2,15 +2,26 @@
   <view class="out">
     <input
       type="text"
-      :value="inputValue"
       @focus="isActive = true"
       @blur="isActive = false"
+      :value="inputValue"
+			@input="e => inputValue = e.detail.value"
     />
+		
+		<!-- 上面的 :value + @input 等价于下面的v-model -->
+		<!-- <input
+		  type="text"
+		  @focus="isActive = true"
+		  @blur="isActive = false"
+		  v-model="inputValue"
+		/> -->
+		
     <image
       src="../../static/chicken.gif"
       class="pic"
       :class="isActive ? 'active' : ''"
     />
+		预览：{{ inputValue }}
   </view>
 </template>
 
@@ -19,6 +30,13 @@ import { ref } from "vue";
 
 const inputValue = ref("");
 const isActive = ref(false);
+
+// 将handleInput写在html代码块中
+// function handleInput(e) {
+// 	// console.log(e);
+// 	inputValue.value = e.detail.value; // 注意这里是 e.detail.value 不是 e.target.value
+// }
+
 </script>
 
 <style lang="scss" scoped>
