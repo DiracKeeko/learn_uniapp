@@ -1,33 +1,35 @@
 <template>
   <view class="out">
-    <input type="text" v-model="firstName" placeholder="请输入名" />
-    firstName: {{ firstName }}
+    <input type="text" v-model="firstName" placeholder="firstName" />
+    <input type="text" v-model="lastName" placeholder="lastName" />
+    fullName: {{ fullName }}
 
     <view>--------</view>
-    <input type="text" v-model="person.name" placeholder="请输入名" />
+    <input type="text" v-model="person.name" placeholder="person" />
     全称：{{ person }}
   </view>
 </template>
 
 <script setup>
 import { ref, watch, watchEffect } from "vue";
-const firstName = ref("Jerry");
+const firstName = ref("first");
+const lastName = ref("last");
+const fullName = ref("first last");
 
 const person = ref({
   name: "Tom",
   age: 5,
 });
 
-/*
-watch([firstName,lastName],([NfirstName,NlastName],[OfirstName,OlastName])=>{
-	console.log(NfirstName,NlastName);
-	console.log(OfirstName,OlastName);
-})
+// watch([firstName, lastName], ([newF, newL], [oldF, oldL]) => {
+//   fullName.value = newF + " " + newL;
+// });
 
-watch(lastName,(nv,ol)=>{
-	
-})
-*/
+// watchEffect 监听所有ref定义的数据源的改变
+watchEffect(() => {
+  fullName.value = firstName.value + " " + lastName.value;
+  console.log("watchEffect->", { firstName, lastName, person });
+});
 
 // watch监听的是一个ref创建的变量 (是firstName, 不是firstName.value)
 // 默认是浅监听
