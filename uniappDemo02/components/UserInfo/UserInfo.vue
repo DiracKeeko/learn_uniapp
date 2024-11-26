@@ -1,17 +1,16 @@
 <template>
   <view class="user-info">
     <image :src="avatar" mode="" class="avatar"></image>
-    <view>{{ computedName }}</view>
+    <view>{{ username }}</view>
   </view>
 </template>
 
 <script setup>
-import { computed } from "vue";
-const props = defineProps(["username", "avatar"])
+// const props = defineProps(["username", "avatar"]);
 /* 
 // 如果需要控制台打印，或者是处理username等传入参数的内容，则需要用变量接住这个props  
-// const props = defineProps([...])
-const props = defineProps(["username", "avatar"])
+// const props = defineProps([...]);
+const props = defineProps(["username", "avatar"]);
 console.log("username->", props.username);
 */
 
@@ -23,7 +22,19 @@ console.log("username->", props.username);
 // }
 
 // computed实现，需要借助 变量名props  (props.username)
-const computedName = computed(() => props.username + "@");
+// const computedName = computed(() => props.username + "@");
+
+// 推荐用法: defineProps 定义类型和默认值
+defineProps({
+  username: {
+    type: String,
+    default: "匿名",
+  },
+  avatar: {
+    type: String,
+    default: "../../static/pic3.jpg",
+  },
+});
 
 </script>
 
