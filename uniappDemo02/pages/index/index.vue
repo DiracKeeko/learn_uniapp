@@ -1,7 +1,8 @@
 <template>
 	<view class="content">
-		<UserInfo v-for="item in 2"></UserInfo>
-		<keeko-header></keeko-header>
+		<UserInfo username="张三" avatar="../../static/pic1.jpg"></UserInfo>
+		<UserInfo username="李四" avatar="../../static/pic2.jpg"></UserInfo>
+		<UserInfo></UserInfo>
 	</view>
 </template>
 
