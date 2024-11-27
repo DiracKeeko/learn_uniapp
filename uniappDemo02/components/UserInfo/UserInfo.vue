@@ -1,7 +1,7 @@
 <template>
   <view class="user-info">
-    <image :src="avatar" mode="" class="avatar"></image>
-    <view>{{ username }}</view>
+    <image :src="userObj.avatar" mode="" class="avatar"></image>
+    <view>{{ userObj.username }}</view>
   </view>
 </template>
 
@@ -25,16 +25,26 @@ console.log("username->", props.username);
 // const computedName = computed(() => props.username + "@");
 
 // 推荐用法: defineProps 定义类型和默认值
+// defineProps({
+//   username: {
+//     type: String,
+//     default: "匿名",
+//   },
+//   avatar: {
+//     type: String,
+//     default: "../../static/pic3.jpg",
+//   },
+// });
+
 defineProps({
-  username: {
-    type: String,
-    default: "匿名",
-  },
-  avatar: {
-    type: String,
-    default: "../../static/pic3.jpg",
-  },
-});
+	userObj: {
+		type: Object,
+		default: () => ({
+			username: "匿名",
+			avatar: "../../static/pic3.jpg"
+		})
+	}
+})
 
 </script>
 
