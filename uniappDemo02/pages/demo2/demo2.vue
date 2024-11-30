@@ -1,6 +1,9 @@
 <template>
   <view class="">
-    <kk-layout> 默认插槽 - 匿名插槽</kk-layout>
+    <kk-layout>
+      <template v-slot:header>demo2头部</template>
+      <template #main> demo2内容区</template>
+    </kk-layout>
   </view>
 </template>
 
