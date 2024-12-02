@@ -3,6 +3,7 @@
 		<scroll-view :scroll-x="false" :scroll-y="true" class="scroll" ref="theScroll">
       <view>1111</view>
     </scroll-view>
+		<life-demo v-if="show"></life-demo>
   </view>
 </template>
 
@@ -16,6 +17,12 @@ console.log("setup-> scroll->", theScroll.value);
 onMounted(()=>{
 	console.log("onMounted-> scroll->", theScroll.value);
 })
+
+const show = ref(true);
+
+setTimeout(()=>{
+	show.value = false
+},2000)
 
 </script>
 
