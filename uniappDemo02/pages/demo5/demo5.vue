@@ -3,6 +3,7 @@
     <demo-child ref="child"></demo-child>
     <view>---------</view>
     <button @click="handleClick">父组件调用子组件方法</button>
+		<navigator url="/pages/demo6/demo6?name=Mikey">点击跳转demo6</navigator>
   </view>
 </template>
 
