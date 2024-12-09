@@ -2,12 +2,13 @@
 	<view>
 		姓名: {{ name }}
 		<scroll-view ref="scroll"></scroll-view>
+		<navigator url="/pages/demo5/demo5">跳转demo5</navigator>
 	</view>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { onLoad, onReady } from "@dcloudio/uni-app";
+import { onLoad, onReady, onShow } from "@dcloudio/uni-app";
 
 const name = ref("Tom");
 const scroll = ref(null);
@@ -24,11 +25,25 @@ onLoad((e) => {
 	console.log("scroll in onLoad->", scroll?.value);
 })	
 
+// onShow的第1种触发条件是加载页面的时候。
+// onShow的第2种触发条件是在离开页面之后，返回回来的时候  (注意是返回回来的时候。如果是navigator跳转，则相当于重新加载)
+// onShow的第3种触发条件是切换tab。离开tab再回来也会触发。
+onShow(() => {
+	console.log("onShow");
+})
+
 // onLoad发生在页面初次渲染之前，因此无法获取dom元素
 // 若想要获取dom元素，得用onReady生命周期
 onReady(() => {
 	console.log("scroll in onReady->", scroll?.value);
 })
+
+/* 
+	执行顺序:
+		1. onLoad
+		2. onShow
+ 
+ */
 </script>
 
 <style>
