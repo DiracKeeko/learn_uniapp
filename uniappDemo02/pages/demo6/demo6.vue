@@ -8,7 +8,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { onLoad, onReady, onShow } from "@dcloudio/uni-app";
+import { onLoad, onReady, onShow, onHide } from "@dcloudio/uni-app";
 
 const name = ref("Tom");
 const scroll = ref(null);
@@ -32,6 +32,11 @@ onShow(() => {
 	console.log("onShow");
 })
 
+// onHide在 1.离开页面的时候  2.切换tab(离开当前tab)的时候触发
+onHide(() => {
+	console.log("onHide");
+})
+
 // onLoad发生在页面初次渲染之前，因此无法获取dom元素
 // 若想要获取dom元素，得用onReady生命周期
 onReady(() => {
@@ -42,6 +47,7 @@ onReady(() => {
 	执行顺序:
 		1. onLoad
 		2. onShow
+		3. onReady
  
  */
 </script>
