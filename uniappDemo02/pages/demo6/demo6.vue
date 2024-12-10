@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onBeforeMount, onMounted, ref } from "vue";
 import { onLoad, onReady, onShow, onHide } from "@dcloudio/uni-app";
 
 const name = ref("Tom");
@@ -59,6 +59,16 @@ onReady(() => {
 		3. onReady
  
  */
+
+/* 
+  uniapp中组件生命周期函数和页面生命周期函数的执行顺序
+  不包含组件的页面
+  onLoad > onShow > onReady
+  
+  包含组件的页面 (与vue3自身周期混用 onBeforeMount, onMounted)
+  onLoad > onShow > onBeforeMount > onReady > onMounted
+*/
+
 </script>
 
 <style></style>
