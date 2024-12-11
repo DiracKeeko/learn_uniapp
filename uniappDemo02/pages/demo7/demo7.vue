@@ -1,7 +1,11 @@
 <template>
   <view class=""> 生命周期 </view>
   <navigator url="/pages/demo6/demo6">点击跳转demo6</navigator>
-  <navigator open-type="reLaunch" url="/pages/demo4/demo4">跳转demo4销毁当前页</navigator>
+  <navigator open-type="reLaunch" url="/pages/demo4/demo4"
+    >跳转demo4销毁当前页</navigator
+  >
+  <view v-for="item in 50">{{ item }}</view>
+  <view class="fixed" v-if="fixed">↑</view>
 </template>
 
 <script setup>
@@ -12,9 +16,9 @@ import {
   onShow,
   onHide,
   onUnload,
+  onPageScroll,
 } from "@dcloudio/uni-app";
 
-const count = ref(0);
 const fixed = ref(false);
 
 onLoad((e) => {
@@ -43,6 +47,12 @@ onMounted(() => {
 
 onUnload(() => {
   console.log("onUnload卸载页面");
+});
+
+// 页面滚动时触发
+onPageScroll((e) => {
+  console.log(e.scrollTop);
+  fixed.value = e.scrollTop > 200;
 });
 
 /* 
