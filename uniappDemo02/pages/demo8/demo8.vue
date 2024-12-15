@@ -21,6 +21,6 @@
 .text {
   font-size: 52rpx;
   // font-size: 52px;
-  color: $uni-color-primary;
+  color: $custom-color-2;
 }
 </style>

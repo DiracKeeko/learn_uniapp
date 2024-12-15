@@ -76,3 +76,6 @@ $uni-color-paragraph: #3F536E; // 文章段落颜色
 $uni-font-size-paragraph:15px;
 
 // 如果改变scss内容 (如新增、修改) 则需要重启项目
+
+// 引入自定义scss文件
+@import "@/common/scss/self.scss";
