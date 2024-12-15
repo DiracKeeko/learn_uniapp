@@ -52,22 +52,19 @@
 			"path" : "pages/demo7/demo7",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "demo7" // 优先级高
 			}
 		},
 		{
-			"path" : "pages/demo8/demo8",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
-			}
+			"path" : "pages/demo8/demo8"
 		}
 	],
+  // globalStyle 的优先级比页面级的优先级低
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTextStyle": "white", // 顶部导航栏文字颜色
+		"navigationBarTitleText": "Keeko",
+		"navigationBarBackgroundColor": "#CCCCCC", // 顶部导航栏颜色
+		"backgroundColor": "#F8F8F8" // 全局背景色
 	},
 	"uniIdRouter": {}
 }
