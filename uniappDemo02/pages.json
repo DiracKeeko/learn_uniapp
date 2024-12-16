@@ -64,9 +64,11 @@
 		"navigationBarTextStyle": "white", // 顶部导航栏文字颜色
 		"navigationBarTitleText": "Keeko",
 		"navigationBarBackgroundColor": "#CCCCCC", // 顶部导航栏颜色
-		"backgroundColor": "#F8F8F8", // 全局背景色
+		"backgroundColor": "#CAF0DF", // 全局背景色
+    "backgroundTextStyle": "light", // 仅在微信小程序中生效
+		"enablePullDownRefresh": true // 开启下拉刷新
 		
-		"navigationStyle": "custom" // 添加这条属性后 顶部导航栏消失，所有的自定义导航栏样式失效
+		// "navigationStyle": "custom" // 添加这条属性后 顶部导航栏消失，所有的自定义导航栏样式失效
 	},
 	"uniIdRouter": {}
 }
