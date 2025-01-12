@@ -66,7 +66,8 @@
 		"navigationBarBackgroundColor": "#CCCCCC", // 顶部导航栏颜色
 		"backgroundColor": "#CAF0DF", // 全局背景色
     "backgroundTextStyle": "light", // 仅在微信小程序中生效
-		"enablePullDownRefresh": true // 开启下拉刷新
+		"enablePullDownRefresh": true, // 开启下拉刷新
+		"onReachBottomDistance": 100 // 页面上拉触底事件触发时距离页面底部的距离 默认值 50, 单位px
 		
 		// "navigationStyle": "custom" // 添加这条属性后 顶部导航栏消失，所有的自定义导航栏样式失效
 	},
